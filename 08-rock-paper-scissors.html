@@ -42,16 +42,10 @@
     </button>
 
     <script>
-      const score = {
-        wins: 0,
-        ties: 0,
-        losses: 0,
-      };
+      const score = JSON.parse(localStorage.getItem("score"));
 
-      function whoIsWinner(result) {
-        if (result === "You win") {
-        }
-      }
+      // localStorage.setItem("message", "hello");
+      // console.log(localStorage.getItem("message"));
 
       function playGame(playerMove) {
         const computerMove = pickComputerMove();
@@ -94,6 +88,8 @@
           score.ties++;
           console.log(score);
         }
+
+        localStorage.setItem("score", JSON.stringify(score));
 
         alert(
           `You picked ${playerMove}. Computer picked ${computerMove}. ${result}.
