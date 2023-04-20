@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <script
+      src="https://kit.fontawesome.com/89a07df7f5.js"
+      crossorigin="anonymous"></script>
+    <style>
+      :root {
+        --cl-dark-gray: rgb(63, 63, 63);
+        --cl-medium-gray: #e1e1e1;
+        --cl-light-gray: #f4f4f4;
+        --cl-accent: rgb(255, 166, 0);
+        --cl-black: #1c1a1a;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        background: var(--cl-black);
+        display: flex;
+        justify-content: center;
+      }
+      .container {
+        display: flex;
+        max-width: 700px;
+        height: 100dvh;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+      }
+      .cal {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0.5rem;
+      }
+
+      .btn {
+        width: 4rem;
+        height: 4rem;
+        border-radius: 50%;
+        border: none;
+        font-size: 1.5rem;
+        margin: auto;
+        cursor: pointer;
+        transition: 300ms;
+      }
+
+      .btn:hover {
+        box-shadow: 0 0 15px 0 rgba(173, 173, 173, 0.4);
+      }
+
+      .bg-dark-gray {
+        background: var(--cl-dark-gray);
+        color: var(--cl-light-gray);
+      }
+
+      .bg-medium-gray {
+        background: var(--cl-medium-gray);
+        color: var(--cl-dark-gray);
+      }
+
+      .bg-orange {
+        background: var(--cl-accent);
+        color: var(--cl-light-gray);
+      }
+
+      .zero {
+        width: 9rem;
+        border-radius: 2rem;
+        grid-column: 1 / span 2;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="cal">
+        <!-- column start -->
+        <button class="btn bg-medium-gray">
+          <i
+            class="fa-solid fa-c"
+            onclick="
+          calculation = '';
+          toTalNumber = '';
+          console.log('Cleared');
+          "></i>
+        </button>
+        <button class="btn bg-medium-gray">+/-</button>
+        <button class="btn bg-medium-gray">
+          <i class="fa-solid fa-percent"></i>
+        </button>
+        <button
+          class="btn bg-orange"
+          onclick="
+updateCalculation(' / ');
+        ">
+          <i class="fa-solid fa-divide"></i>
+        </button>
+        <!-- number 1st column -->
+        <button
+          class="btn bg-dark-gray"
+          onclick="
+updateCalculation(7);
+        ">
+          7
+        </button>
+        <button
+          class="btn bg-dark-gray"
+          onclick="
+updateCalculation(8);
+        ">
+          8
+        </button>
+        <button
+          class="btn bg-dark-gray"
+          onclick="
+updateCalculation('9');
+        ">
+          9
+        </button>
+        <button
+          class="btn bg-orange"
+          onclick="
+       updateCalculation(' * ');
+        ">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+        <!-- number 2nd column -->
+        <button
+          class="btn bg-dark-gray"
+          onclick="
+          updateCalculation(4);
+        ">
+          4
+        </button>
+        <button
+          class="btn bg-dark-gray"
+          onclick="
+        updateCalculation(5);
+        ">
+          5
+        </button>
+        <button
+          class="btn bg-dark-gray"
+          onclick="
+        updateCalculation(6);
+        ">
+          6
+        </button>
+        <button
+          class="btn bg-orange"
+          onclick="
+        updateCalculation(' - ');
+        ">
+          <i class="fa-solid fa-minus"></i>
+        </button>
+        <!-- number 3rd column -->
+        <button
+          class="btn bg-dark-gray"
+          onclick="
+        updateCalculation(1);
+        ">
+          1
+        </button>
+        <button
+          class="btn bg-dark-gray"
+          onclick="
+        updateCalculation(2);
+        ">
+          2
+        </button>
+        <button
+          class="btn bg-dark-gray"
+          onclick="
+        updateCalculation(3);
+        ">
+          3
+        </button>
+        <button
+          class="btn bg-orange"
+          onclick="
+        updateCalculation(' + ');
+        ">
+          <i class="fa-solid fa-plus"></i>
+        </button>
+        <!-- last column -->
+        <button
+          class="btn bg-dark-gray zero"
+          onclick="
+        updateCalculation(0);
+        ">
+          0
+        </button>
+        <button
+          class="btn bg-dark-gray"
+          onclick="
+        updateCalculation('.');
+        ">
+          .
+        </button>
+        <button class="btn bg-orange">
+          <i
+            class="fa-solid fa-equals"
+            onclick="
+          toTalNumber = eval(calculation);
+          console.log(toTalNumber);
+          "></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Script -->
+    <script>
+      let calculation = "";
+      let toTalNumber = "";
+
+      function updateCalculation(item) {
+        calculation += item;
+        console.log(calculation);
+      }
+    </script>
+  </body>
+</html>
