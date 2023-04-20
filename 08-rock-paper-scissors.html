@@ -42,15 +42,11 @@
     </button>
 
     <script>
-      let score = JSON.parse(localStorage.getItem("score"));
-
-      if (!score) {
-        score = {
-          wins: 0,
-          losses: 0,
-          ties: 0,
-        };
-      }
+      let score = JSON.parse(localStorage.getItem("score")) || {
+        wins: 0,
+        losses: 0,
+        ties: 0,
+      };
 
       // localStorage.setItem("message", "hello");
       // console.log(localStorage.getItem("message"));
