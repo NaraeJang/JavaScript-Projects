@@ -30,6 +30,8 @@
     </button>
 
     <h3 class="js-result"></h3>
+    <p class="js-whoWhat"></p>
+    <p class="js-score"></p>
 
     <button
       onclick="
@@ -97,6 +99,16 @@
           `You picked ${playerMove}. Computer picked ${computerMove}. ${result}.
           Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties} `
         );
+
+        document.querySelector(".js-result").innerHTML = `${result}`;
+
+        document.querySelector(
+          ".js-whoWhat"
+        ).innerHTML = `You picked ${playerMove}. Computer picked ${computerMove}.`;
+
+        document.querySelector(
+          ".js-score"
+        ).innerHTML = `Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`;
 
         return result;
       }
