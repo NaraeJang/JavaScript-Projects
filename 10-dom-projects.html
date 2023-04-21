@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Projects</title>
+  </head>
+  <body>
+    <h3>Youtube Subscribe Button</h3>
+    <button
+      class="js-btn-subscribe"
+      onclick="
+   subscribe();
+    ">
+      Subscribe
+    </button>
+
+    <h3>Rock Paper Scissors</h3>
+    <a href="09-rock-paper-scissors.html">Click here</a>
+
+    <h3>Amazon Shipping Calculator</h3>
+    <p>Orders under $40 = +$10 shipping.</p>
+    <p>Orders over $40 = FREE shipping.</p>
+    <input
+      type="text"
+      name="order"
+      class="js-cost-input"
+      placeholder="Cost of order"
+      onkeydown="
+        handleCostKeydown(event);    
+      " />
+    <button
+      type="submit"
+      onclick="
+    orderCalculator();
+    ">
+      Calculate
+    </button>
+    <p class="js-calculated-number"></p>
+
+    <button
+      class="js-9a"
+      onclick="
+    console.log(document.querySelector('.js-9a').innerHTML =' 9b done!');
+    ">
+      9a
+    </button>
+    <br /><br />
+    <button
+      class="js-heads"
+      onclick="
+      
+    update9cResult(heads);
+    console.log(heads);
+    ">
+      heads
+    </button>
+    <button
+      class="js-tails"
+      onclick="
+      
+    update9cResult(tails);
+    ">
+      tails
+    </button>
+    <p class="js-9c-result"></p>
+
+    <input
+      type="text"
+      placeholder="Name"
+      value=""
+      class="js-9d-input"
+      onkeydown="
+ handle9f(event);
+      " />
+    <button
+      type="submit"
+      onclick="
+    updateName();
+    ">
+      Submit
+    </button>
+    <p class="js-9d-text"></p>
+    <script>
+      // 9f
+      function handle9f(event) {
+        if (event.key === "Enter") {
+          updateName();
+        }
+      }
+      // 9d
+      function updateName() {
+        document.querySelector(".js-9d-text").innerHTML =
+          document.querySelector(".js-9d-input").value;
+      }
+
+      // 9c
+      const heads = document.querySelector(".js-heads").innerHTML;
+      const tails = document.querySelector(".js-tails").innerHTML;
+
+      function update9cResult(result) {
+        document.querySelector(
+          ".js-9c-result"
+        ).innerHTML = `You chose: ${result}`;
+      }
+
+      console.log(window.console);
+
+      function handleCostKeydown(event) {
+        if (event.key === "Enter") {
+          orderCalculator();
+        }
+      }
+
+      function subscribe() {
+        const btnElem = document.querySelector(".js-btn-subscribe");
+
+        if (btnElem.innerHTML === "Subscribe") {
+          btnElem.innerHTML = "Subscribed";
+        } else {
+          btnElem.innerHTML = "Subscribe";
+        }
+      }
+
+      function orderCalculator() {
+        const inputElement = document.querySelector(".js-cost-input");
+        let cost = Number(inputElement.value);
+        if (cost < 40) {
+          cost += 10;
+        } else if (cost > 40) {
+          cost;
+        }
+
+        document.querySelector(".js-calculated-number").innerHTML = `$${cost}`;
+      }
+    </script>
+  </body>
+</html>

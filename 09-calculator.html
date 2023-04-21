@@ -26,6 +26,7 @@
       }
       .container {
         display: flex;
+        flex-direction: column;
         max-width: 700px;
         height: 100dvh;
         height: 100vh;
@@ -73,10 +74,29 @@
         border-radius: 2rem;
         grid-column: 1 / span 2;
       }
+
+      .js-result {
+        color: var(--cl-light-gray);
+        font-size: 2rem;
+        text-align: right;
+      }
+
+      .result-box {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-end;
+        max-width: 700px;
+        width: 100%;
+        height: 3rem;
+        padding: 0.5rem;
+        text-align: right;
+      }
     </style>
   </head>
   <body>
     <div class="container">
+      <p class="js-result result-box"></p>
       <div class="cal">
         <!-- column start -->
         <button class="btn bg-medium-gray">
@@ -84,7 +104,7 @@
             class="fa-solid fa-c"
             onclick="
           calculation= '';
-
+          showResult(calculation);
           // toTalNumber = '';
           console.log('Cleared');
 
@@ -210,6 +230,7 @@ updateCalculation('9');
           calculation= eval(calculation);
           console.log(calculation);
           localStorage.setItem('calculation', calculation);
+          showResult(calculation);
           "></i>
         </button>
       </div>
@@ -224,6 +245,11 @@ updateCalculation('9');
 
         localStorage.setItem("calculation", calculation);
         console.log(calculation);
+        showResult(calculation);
+      }
+
+      function showResult(calculation) {
+        document.querySelector(".js-result").innerHTML = calculation;
       }
     </script>
   </body>
