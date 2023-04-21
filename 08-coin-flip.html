@@ -2,17 +2,45 @@
 <html>
   <head></head>
   <body>
-    <button>heads</button>
-    <button>tails</button>
+    <button
+      onclick="
+    playGame('heads');
+    ">
+      heads
+    </button>
+    <button
+      onclick="
+    playGame('tails');
+    ">
+      tails
+    </button>
     <script>
       //   const guess = "heads";
       //   console.log(guess === result ? "You win!" : "You lose!");
+      let myResult = "";
+
+      let score = JSON.parse(localStorage.getItem("score")) || {
+        wins: 0,
+        losses: 0,
+      };
 
       function playGame(guess) {
         const randomNumber = Math.random();
-        const result = randomNumber < 0.5 ? "heads" : "tails";
+        const computerResult = randomNumber < 0.5 ? "heads" : "tails";
 
-        guess === result ? "You win!" : "You lose!";
+        if (guess === computerResult) {
+          score.wins++;
+          alert(
+            `You win!
+          wins: ${score.wins}, losses: ${score.losses}`
+          );
+        } else if (guess !== computerResult) {
+          score.losses++;
+          alert(`You lose!
+          wins: ${score.wins}, losses: ${score.losses}`);
+        }
+
+        localStorage.setItem("score", JSON.stringify(score));
       }
     </script>
   </body>
