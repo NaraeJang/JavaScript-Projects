@@ -27,7 +27,8 @@
       name="order"
       class="js-cost-input"
       placeholder="Cost of order"
-      onkeydown="console.log(event.key)
+      onkeydown="
+        handleCostKeydown(event);    
       " />
     <button
       type="submit"
@@ -38,7 +39,80 @@
     </button>
     <p class="js-calculated-number"></p>
 
+    <button
+      class="js-9a"
+      onclick="
+    console.log(document.querySelector('.js-9a').innerHTML =' 9b done!');
+    ">
+      9a
+    </button>
+    <br /><br />
+    <button
+      class="js-heads"
+      onclick="
+      
+    update9cResult(heads);
+    console.log(heads);
+    ">
+      heads
+    </button>
+    <button
+      class="js-tails"
+      onclick="
+      
+    update9cResult(tails);
+    ">
+      tails
+    </button>
+    <p class="js-9c-result"></p>
+
+    <input
+      type="text"
+      placeholder="Name"
+      value=""
+      class="js-9d-input"
+      onkeydown="
+ handle9f(event);
+      " />
+    <button
+      type="submit"
+      onclick="
+    updateName();
+    ">
+      Submit
+    </button>
+    <p class="js-9d-text"></p>
     <script>
+      // 9f
+      function handle9f(event) {
+        if (event.key === "Enter") {
+          updateName();
+        }
+      }
+      // 9d
+      function updateName() {
+        document.querySelector(".js-9d-text").innerHTML =
+          document.querySelector(".js-9d-input").value;
+      }
+
+      // 9c
+      const heads = document.querySelector(".js-heads").innerHTML;
+      const tails = document.querySelector(".js-tails").innerHTML;
+
+      function update9cResult(result) {
+        document.querySelector(
+          ".js-9c-result"
+        ).innerHTML = `You chose: ${result}`;
+      }
+
+      console.log(window.console);
+
+      function handleCostKeydown(event) {
+        if (event.key === "Enter") {
+          orderCalculator();
+        }
+      }
+
       function subscribe() {
         const btnElem = document.querySelector(".js-btn-subscribe");
 
