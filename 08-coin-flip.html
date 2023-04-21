@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    <button>heads</button>
+    <button>tails</button>
+    <script>
+      //   const guess = "heads";
+      //   console.log(guess === result ? "You win!" : "You lose!");
+
+      function playGame(guess) {
+        const randomNumber = Math.random();
+        const result = randomNumber < 0.5 ? "heads" : "tails";
+
+        guess === result ? "You win!" : "You lose!";
+      }
+    </script>
+  </body>
+</html>
