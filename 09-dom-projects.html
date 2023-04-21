@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Projects</title>
+  </head>
+  <body>
+    <h3>Youtube Subscribe Button</h3>
+    <button
+      class="js-btn-subscribe"
+      onclick="
+   subscribe();
+    ">
+      Subscribe
+    </button>
+
+    <h3>Rock Paper Scissors</h3>
+    <a href="09-rock-paper-scissors.html">Click here</a>
+
+    <h3>Amazon Shipping Calculator</h3>
+    <p>Orders under $40 = +$10 shipping.</p>
+    <p>Orders over $40 = FREE shipping.</p>
+    <input type="text" name="order" id="order" placeholder="Cost of order" />
+    <button type="submit">Calculate</button>
+    <p class="calculated-number"></p>
+
+    <script>
+      function subscribe() {
+        const btnElem = document.querySelector(".js-btn-subscribe");
+
+        if (btnElem.innerHTML === "Subscribe") {
+          btnElem.innerHTML = "Subscribed";
+        } else {
+          btnElem.innerHTML = "Subscribe";
+        }
+      }
+    </script>
+  </body>
+</html>

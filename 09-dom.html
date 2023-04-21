@@ -8,6 +8,7 @@
   </head>
   <body>
     <button id="btn">hello</button>
+    <button class="world">World</button>
     <script>
       /*
             document.body.innerHTML = "hello";
@@ -23,6 +24,10 @@
 
       console.log(document.querySelector("button"));
       document.querySelector("button").innerHTML = "Changed";
+      const btnElement = (document.querySelector(".world").innerHTML =
+        "Samsung M8");
+
+      console.log(btnElement);
     </script>
   </body>
 </html>
