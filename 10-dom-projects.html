@@ -5,11 +5,64 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DOM Projects</title>
+    <style>
+      :root {
+        --ff-base: Arial, Helvetica, sans-serif;
+
+        --cl-black: rgb(15, 15, 15);
+        --cl-white: #fff;
+        --cl-accent: green;
+      }
+
+      body {
+        margin: 1rem;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      h1,
+      h2,
+      h3,
+      h4,
+      p,
+      a {
+        font-family: var(--ff-base);
+      }
+      .btn {
+        padding: 1rem 2rem;
+        margin-bottom: 3rem;
+        font-family: var(--ff-base);
+        font-weight: bold;
+        font-size: 1rem;
+        background-color: var(--cl-black);
+        color: var(--cl-white);
+        border-radius: 0.2rem;
+        border: none;
+      }
+
+      input {
+        padding: 1rem 1rem;
+        font-size: 1rem;
+        border-radius: 0.2rem;
+        border: #333 solid 1px;
+      }
+
+      .btn-primary {
+        background-color: var(--cl-accent);
+      }
+
+      .my-3 {
+        margin: 0 0 5rem 0;
+      }
+
+      .btn-round {
+        border-radius: 2rem;
+      }
+    </style>
   </head>
   <body>
     <h3>Youtube Subscribe Button</h3>
     <button
-      class="js-btn-subscribe"
+      class="js-btn-subscribe btn btn-round"
       onclick="
    subscribe();
     ">
@@ -17,7 +70,7 @@
     </button>
 
     <h3>Rock Paper Scissors</h3>
-    <a href="09-rock-paper-scissors.html">Click here</a>
+    <a class="my-3" href="09-rock-paper-scissors.html">Click here</a>
 
     <h3>Amazon Shipping Calculator</h3>
     <p>Orders under $40 = +$10 shipping.</p>
@@ -31,6 +84,7 @@
         handleCostKeydown(event);    
       " />
     <button
+      class="btn btn-primary"
       type="submit"
       onclick="
     orderCalculator();
@@ -39,7 +93,7 @@
     </button>
     <p class="js-calculated-number"></p>
 
-    <button
+    <!-- <button
       class="js-9a"
       onclick="
     console.log(document.querySelector('.js-9a').innerHTML =' 9b done!');
@@ -81,7 +135,7 @@
     ">
       Submit
     </button>
-    <p class="js-9d-text"></p>
+    <p class="js-9d-text"></p> -->
     <script>
       // 9f
       function handle9f(event) {
