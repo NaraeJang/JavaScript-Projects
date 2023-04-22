@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Projects</title>
+    <style>
+      :root {
+        --ff-base: Arial, Helvetica, sans-serif;
+
+        --cl-black: rgb(15, 15, 15);
+        --cl-white: #fff;
+        --cl-accent: green;
+      }
+
+      body {
+        margin: 1rem;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      h1,
+      h2,
+      h3,
+      h4,
+      p,
+      a {
+        font-family: var(--ff-base);
+      }
+      .btn {
+        padding: 1rem 2rem;
+        margin-bottom: 3rem;
+        font-family: var(--ff-base);
+        font-weight: bold;
+        font-size: 1rem;
+        background-color: var(--cl-black);
+        color: var(--cl-white);
+        border-radius: 0.2rem;
+        border: none;
+      }
+
+      input {
+        padding: 1rem 1rem;
+        font-size: 1rem;
+        border-radius: 0.2rem;
+        border: #333 solid 1px;
+      }
+
+      .btn-primary {
+        background-color: var(--cl-accent);
+      }
+
+      .my-3 {
+        margin: 0 0 5rem 0;
+      }
+
+      .btn-round {
+        border-radius: 2rem;
+      }
+
+      .istoggled {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>Youtube Subscribe Button</h3>
+    <button
+      class="js-btn-subscribe btn btn-round"
+      onclick="
+   subscribe();
+    ">
+      Subscribe
+    </button>
+
+    <h3>Rock Paper Scissors</h3>
+    <a class="my-3" href="09-rock-paper-scissors.html">Click here</a>
+
+    <h3>Amazon Shipping Calculator</h3>
+    <p>Orders under $40 = +$10 shipping.</p>
+    <p>Orders over $40 = FREE shipping.</p>
+    <input
+      type="text"
+      name="order"
+      class="js-cost-input"
+      placeholder="Cost of order"
+      onkeydown="
+        handleCostKeydown(event);    
+      " />
+    <button
+      class="btn btn-primary"
+      type="submit"
+      onclick="
+    orderCalculator();
+    ">
+      Calculate
+    </button>
+    <p class="js-calculated-number"></p>
+
+    <script>
+      function handleCostKeydown(event) {
+        if (event.key === "Enter") {
+          orderCalculator();
+        }
+      }
+
+      function subscribe() {
+        const btnElem = document.querySelector(".js-btn-subscribe");
+
+        if (btnElem.innerHTML === "Subscribe") {
+          btnElem.innerHTML = "Subscribed";
+        } else {
+          btnElem.innerHTML = "Subscribe";
+        }
+      }
+
+      function orderCalculator() {
+        const inputElement = document.querySelector(".js-cost-input");
+
+        let cost = Number(inputElement.value);
+
+        if (cost <= 0) {
+          cost = "Error: cost cannot be less than $0";
+          resultCost(cost);
+          updateToggle();
+        } else if (cost > 40) {
+          cost;
+          resultCost(`$${cost}`);
+          removeToggle();
+        } else if (cost < 40) {
+          cost += 10;
+          resultCost(`$${cost}`);
+          removeToggle();
+        }
+      }
+
+      function resultCost(cost) {
+        document.querySelector(".js-calculated-number").innerHTML = cost;
+      }
+
+      function updateToggle() {
+        const button = document.querySelector(".js-calculated-number");
+        button.classList.add("istoggled");
+      }
+
+      function removeToggle() {
+        const button = document.querySelector(".js-calculated-number");
+        if (button.classList.contains("istoggled")) {
+          button.classList.remove("istoggled");
+        }
+      }
+    </script>
+  </body>
+</html>

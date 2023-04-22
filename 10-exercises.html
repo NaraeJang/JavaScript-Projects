@@ -14,6 +14,9 @@
         padding: 1rem 2rem;
         border: none;
         font-size: 1.2rem;
+        margin: 1rem;
+        cursor: pointer;
+        min-width: 150px;
       }
 
       .js-amazon {
@@ -24,14 +27,19 @@
         font-weight: medium;
       }
 
-      .js-uber {
+      .js-uber,
+      .js-uber2,
+      .gaming,
+      .music,
+      .tech {
         font-weight: bold;
         background-color: black;
         color: white;
         border-radius: 0.8rem;
       }
 
-      .btn-uber {
+      .btn-uber,
+      .is-toggled {
         background-color: rgb(230, 230, 230);
         color: black;
       }
@@ -43,6 +51,48 @@
     <br />
     <button class="btn js-uber">Request now</button>
     <button class="btn js-uber btn-uber">Schedule for later</button>
-    <script></script>
+    <br />
+    <br />
+    <button
+      class="btn js-uber2 gaming"
+      onclick="
+   updateToggle('.gaming');
+    ">
+      Gaming
+    </button>
+    <button
+      class="btn js-uber2 music"
+      onclick="
+    updateToggle('.music');
+     ">
+      Music
+    </button>
+    <button
+      class="btn js-uber2 tech"
+      onclick="
+    updateToggle('.tech');
+     ">
+      Tech
+    </button>
+    <script>
+      function updateToggle(className) {
+        const button = document.querySelector(className);
+
+        if (!button.classList.contains("is-toggled")) {
+          turnOffPreviousBtn();
+          button.classList.add("is-toggled");
+        } else {
+          button.classList.remove("is-toggled");
+        }
+      }
+
+      function turnOffPreviousBtn() {
+        const previousBtn = document.querySelector(".is-toggled");
+
+        if (previousBtn) {
+          previousBtn.classList.remove("is-toggled");
+        }
+      }
+    </script>
   </body>
 </html>
