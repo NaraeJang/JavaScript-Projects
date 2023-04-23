@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo list</title>
+  </head>
+  <body>
+    <!-- Todo list practice 1 -->
+    <label for="todo-list1">Todo List</label><br /><br />
+    <input
+      class="todoOneInput"
+      type="text"
+      placeholder="Todo name"
+      onkeydown="
+     if (event.key ==='Enter') {
+      updateTodoOne();
+      return;
+     }
+      " />
+    <button
+      onclick="
+   updateTodoOne();
+    ">
+      Add
+    </button>
+    <p class="todoOneResult"></p>
+
+    <!-- Todo list practice 2 -->
+    <br /><br /><br /><br />
+    <label for="todo-list1">Todo List</label><br /><br />
+    <input class="todoOneInput" type="text" placeholder="Todo name" />
+    <button
+      onclick="
+   updateTodoOne();
+    ">
+      Add
+    </button>
+    <script src="main.js"></script>
+  </body>
+</html>
