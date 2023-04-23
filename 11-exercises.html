@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lesson 11 Exercises</title>
+  </head>
+  <body>
+    <script>
+      // 11a
+      /*
+      const nums = [10, 20, 30];
+      nums[2] = 99;
+      console.log(nums);
+
+      // 11b
+      const elevenBArray = [1, 20, 22, 24, 88];
+      function getLastValue(array) {
+        const lastValue = array.length - 1;
+        console.log(array[lastValue]);
+      }
+      getLastValue(elevenBArray);
+      */
+
+      // 11c
+      const array11c = ["you", 20, 22, 24, 20];
+
+      function arraySwap(array) {
+        const lastValue = array[array.length - 1];
+        const firstValue = array[0];
+
+        array[0] = lastValue;
+        array[array.length - 1] = firstValue;
+
+        return array;
+      }
+
+      console.log(arraySwap(array11c));
+    </script>
+  </body>
+</html>

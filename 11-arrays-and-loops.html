@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arrays and Loops</title>
+  </head>
+  <body>
+    <script>
+      /*
+      const myArray = [10, 20, 30];
+      console.log(myArray);
+
+      myArray[0]; // This number represent the number of the value inside. So, Zero means the first value.
+      myArray[0] = 99;
+      console.log(myArray[0]);
+
+      //   What we can put in the array.
+      [1, "hello", true, { name: "socks" }, [1, 2]];
+      //we can put number, string, boolean, object and even nested array because Array itself is also a value.
+
+      console.log(typeof [1, 2]);
+
+      // If we want tto check if someting is specifically an array, we can use this code.
+      Array.isArray([1, 2]);
+      console.log(Array.isArray([1, 2]));
+
+      //   Array can have properties and method.
+      myArray.length; // This will tell us how many values are in the array.
+      console.log(myArray.length);
+
+      //   This adds a value to the end of the array.
+      myArray.push(40); // This will add 40 to the end of my array.
+      console.log(myArray);
+
+      //   This removes a value from an array.
+      myArray.splice(0, 1); //Splice takes two numbers. 1. Index we want to remove. 2. Number of values to remove.(if you choose to remove 2, it wil start to remove from index zero value.)
+      console.log(myArray);
+      */
+
+      // loops
+
+      /*
+      // in the () you can put true & false. so if this code results in true, it will loop and if it's false it will stop.
+      let i = 1;
+      while (i <= 5) {
+        console.log(i);
+        i++;
+      }
+
+      // for loop
+      //  (1.loop variable 2.loop condition 3.Increment step)
+      // {we'll write the code that we want to loop}
+      // for loop is a shorter version of while loop
+      for (let i = 1; i <= 5; i++) {
+        console.log(i);
+      }
+      */
+
+      /*
+      // Looping through an Array
+      const todoList = ["make dinner", "wash dishes", "watch youtube"];
+
+      for (let index = 0; index < todoList.length; index++) {
+        const value = todoList[index];
+        console.log(value);
+      }
+      */
+
+      // Accumulator Patern
+      // Let's say we have an array of numbers: [1 , 1, 3] How do we calculate the total of all the numbers in the array?
+      const nums = [1, 1, 3];
+      let total = 0;
+
+      for (let i = 0; i < nums.length; i++) {
+        const num = nums[i];
+        total += num;
+      }
+
+      console.log(total);
+
+      const numsDoubled = [];
+
+      for (let i = 0; i < nums.length; i++) {
+        const num = nums[i];
+        numsDoubled.push(num * 2);
+      }
+      console.log(numsDoubled);
+    </script>
+  </body>
+</html>
