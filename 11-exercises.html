@@ -21,8 +21,9 @@
         console.log(array[lastValue]);
       }
       getLastValue(elevenBArray);
-      */
+        */
 
+      /*
       // 11c
       const array11c = ["you", 20, 22, 24, 20];
 
@@ -37,6 +38,87 @@
       }
 
       console.log(arraySwap(array11c));
+      */
+
+      /*
+      //   11d
+      const elevend = [];
+      for (let i = 0; i < 11; i = i + 2) {
+        elevend.push(i);
+      }
+
+      console.log(elevend);
+
+      //   11e
+      const elevene = [];
+      for (let i = 5; i >= 0; i--) {
+        elevene.push(i);
+      }
+
+      console.log(elevene);
+
+      //   11f
+      const elevenf1 = [];
+      let i = 0;
+      while (i < 11) {
+        elevenf1.push(i);
+        i = i + 2;
+      }
+      console.log(elevenf1);
+
+      const elevenf2 = [];
+      let i2 = 5;
+
+      while (i2 >= 0) {
+        elevenf2.push(i2);
+        i2--;
+      }
+
+      console.log(elevenf2);
+      */
+
+      /*
+      //   11g
+      const nums = [1, 2, 3];
+      const newNums = [];
+
+      for (let i = 0; i < 3; i++) {
+        const numValue = nums[i] + 1;
+        newNums.push(numValue);
+      }
+
+      console.log(newNums);
+      */
+
+      //   11h
+      const addOneArrayOne = [1, 2, 3];
+      const addOneArrayTwo = [-2, -1, 0, 99];
+
+      function addOne(array) {
+        for (let i = 0; i < array.length; i++) {
+          const element = array[i];
+          array[i] = element + 1;
+        }
+      }
+
+      addOne(addOneArrayTwo);
+      console.log(addOneArrayTwo);
+
+      //   11i
+
+      function addNum(array, num) {
+        const addNumValue = [];
+
+        for (let i = 0; i < array.length; i++) {
+          const element = array[i];
+          addNumValue.push(element + num);
+        }
+
+        return addNumValue;
+      }
+
+      const hi = addNum([1, 2, 3], 2);
+      console.log(hi);
     </script>
   </body>
 </html>
