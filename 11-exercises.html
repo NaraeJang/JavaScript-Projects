@@ -156,17 +156,155 @@
       console.log(countPositive([-2, 3, -5, 7, 10]));
       */
 
+      /*
       //   11l
       function minMax(nums) {
+        const result = {
+          min: null,
+          max: null,
+        };
+
         // 1. takes an array of numbers
         for (let i = 0; i < nums.length; i++) {
-          const element = array[i];
+          const value = nums[i];
 
           //   2. returns an object with the minimum and maximum numbers in the array
+
+          //   2-1. If the value is less than the min, update the min.
+          if (result.min === null || value < result.min) {
+            result.min = value;
+          }
+
+          //   2-2. If the value is more than the max, update the max.
+          if (result.max === null || value > result.max) {
+            result.max = value;
+          }
         }
 
-        return console.log();
+        return result;
       }
+
+      console.log(minMax([3]));
+*/
+
+      /*
+      //   11n
+      function countWords(words) {
+        const result2 = {};
+
+        for (let i = 0; i < words.length; i++) {
+          const word = words[i];
+
+          // result2[word] adds/accesses a property using whatever is
+          // saved inside the 'word' variable.
+          // If word = 'apple', result[word] will do result['apple']
+          // If word = 'grape', result[word] will do result['grape']
+          if (!result2[word]) {
+            result2[word] = 1;
+            console.log(result2[word]);
+          } else {
+            result2[word]++;
+            console.log(result2[word]);
+          }
+        }
+
+        return result2;
+      }
+
+      console.log(countWords(["apple", "grape", "apple", "apple"]));
+
+      //   11n-1
+      function findSameName(names) {
+        const result = {};
+
+        for (let i = 0; i < names.length; i++) {
+          const name = names[i];
+
+          if (!result[name]) {
+            result[name] = 1;
+          } else {
+            result[name]++;
+          }
+        }
+
+        return result;
+      }
+
+      console.log(findSameName(["narae", "woovin", "narae", "narae"]));
+      */
+
+      /*
+      //   11o, 11p
+
+      let words = ["hello", "world", "search", "good", "search"];
+
+      // Set the index to -1 at the start (so we'll assume
+      // the string 'search' doesn't exist in the array).
+      // If we find the string 'search' in the array, we
+      // will update the index.
+      let index = -1;
+
+      for (let i = 0; i < words.length; i++) {
+        if (words[i] === "search") {
+          index = i;
+          break;
+        }
+      }
+
+      console.log(index);
+
+      words = ["not", "found"];
+      index = -1;
+
+      for (let i = 0; i < words.length; i++) {
+        if (words[i] === "search") {
+          index = i;
+        }
+      }
+
+      console.log(index);
+
+      //11q
+      function findIndex(array, word) {
+        for (let i = 0; i < array.length; i++) {
+          // Instead of creating an accumulator
+          // variable and updating it in the loop,
+          // we can just return i directly, when
+          // we find it since this is a function.
+          if (array[i] === word) {
+            return i;
+          }
+        }
+
+        // If the function has not returned by now,
+        // logically that means the word must not
+        // exist in the array, so we'll return -1.
+        return -1;
+      }
+
+      console.log(findIndex(["green", "red", "blue", "red"], "red"));
+      console.log(findIndex(["green", "red", "blue", "red"], "yellow"));
+      */
+
+      //   11r 11s 11t
+      function removeEgg(foods) {
+        const result = [];
+        let eggRemoved = 0;
+        const newFoods = foods.reverse();
+
+        for (let i = 0; i < newFoods.length; i++) {
+          if (foods[i] === "egg" && eggRemoved < 2) {
+            eggRemoved++;
+            continue;
+          } else {
+            result.push(foods[i]);
+          }
+        }
+
+        return result.reverse();
+      }
+
+      console.log(removeEgg(["egg", "apple", "egg", "egg", "ham"]));
     </script>
   </body>
 </html>
