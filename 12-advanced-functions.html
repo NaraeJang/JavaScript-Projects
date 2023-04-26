@@ -8,20 +8,65 @@
   </head>
   <body>
     <script>
+      /*
       function greeting() {
+        //This is the shortcut of the last function code.
         console.log("hello");
       }
 
       greeting();
 
       // Functions are values
-      const function1 = function greeting() {
+      const function1 = function () {
+        //This is called Anonymous function which means a function without a name.
         console.log("hello2");
       };
 
       console.log(function1);
       console.log(typeof function1);
       function1();
+
+      const object1 = {
+        num: 2,
+        fun: function () {
+          //as long as there's a way to access this function, we dont need to name it. we can leave it as an anonymous function.
+          console.log("hello3");
+        },
+      };
+
+      object1.fun();
+
+      //passing a vaule into a function
+      function display(param) {
+        console.log(param);
+      }
+      display(2);
+
+      // we can also pass a function into a function. = Callback function
+      function run(param) {
+        param();
+      }
+
+      run(function () {
+        console.log("hello4");
+      });
+      */
+
+      setTimeout(function () {
+        console.log("timeout");
+      }, 3000); //we will wait for three seconds and then call this function.
+
+      console.log("next line");
+      //If we see our console, it displays next line first then after three seconds it displays timeout.
+      //why are they reversed?
+      //setTimeout sets up a timer and after three seconds it will call this function. however,
+      //it doesn't actually wait for the three seconds to finish, it just sets up the timer and immediately goes to the next line.
+
+      // setInterval(function () {
+      //   console.log("interval");
+      // }, 3000);
+
+      console.log("next line2");
     </script>
   </body>
 </html>
