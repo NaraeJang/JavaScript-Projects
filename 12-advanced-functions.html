@@ -70,16 +70,25 @@
       console.log("next line2");
       */
 
-      // foreach Method
+      // // foreach Method
 
-      ["make dinner", "wash dishes", "watch youtube"].forEach(function (
-        value,
-        index
-      ) {
-        //it loops through the array and for each of these values it will save the value in the parameter.
-        console.log(index);
-        console.log(value);
-      });
+      // ["make dinner", "wash dishes", "watch youtube"].forEach(
+      //   (value, index) => {
+      //     //it loops through the array and for each of these values it will save the value in the parameter.
+      //     console.log(index);
+      //     console.log(value);
+      //   }
+      // );
+
+      ["make dinner", "wash dishes", "watch youtube"].forEach(
+        (value, index) => {
+          if (value === "wash dishes") {
+            return; // This return statement will end this function early and it will go to the next function. Basically, it does the same thing as continue() in a for loop.
+          }
+          console.log(index);
+          console.log(value);
+        }
+      );
     </script>
   </body>
 </html>
