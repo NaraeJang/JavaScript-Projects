@@ -64,3 +64,5 @@ function addTodo() {
 function saveToStorage() {
   localStorage.setItem("todoList", JSON.stringify(todoList));
 }
+
+document.querySelector(".js-add-todo-btn").addEventListener("click", addTodo);

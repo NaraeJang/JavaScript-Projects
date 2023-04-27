@@ -7,7 +7,23 @@
     <title>Advanced function</title>
   </head>
   <body>
+    <button class="js-btn">Click</button>
     <script>
+      const buttonElement = document.querySelector(".js-btn");
+      const eventListener = () => {
+        console.log("clicked");
+      };
+      buttonElement.addEventListener("click", eventListener);
+
+      buttonElement.removeEventListener("click", eventListener);
+
+      buttonElement.addEventListener("click", () => {
+        console.log("click2");
+      });
+      //It was 2 parameters
+      //1. event or what type of interaction we want to listen for.
+      //(The way to find these event names is to look at button's attribute. after "on" is the event name.)
+      // 2. function that we want to run when we click the event listener.
       /*
       function greeting() {
         //This is the shortcut of the last function code.
@@ -80,6 +96,7 @@
       //   }
       // );
 
+      /*
       ["make dinner", "wash dishes", "watch youtube"].forEach(
         (value, index) => {
           if (value === "wash dishes") {
@@ -103,6 +120,15 @@
       const oneLine = () => 2 + 3;
 
       console.log(oneLine());
+
+      const object2 = {
+        method: () => {
+
+        },
+        method() {
+
+        } //This syntax is called ths shorthand method syntax.
+      }*/
     </script>
   </body>
 </html>
