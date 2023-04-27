@@ -31,16 +31,28 @@ function generateHTML() {
     const html = `
     <div>${name}</div>
     <div>${dueDate}</div>
-    <button onclick="
-        todoList.splice(${index}, 1);
-       generateHTML();
-        // Whenever we update the todo list, save in localStorage.
-        saveToStorage();
-      " class="delete-todo-button">Delete</button> `;
+    <button class="delete-todo-button js-delete-todo-btn">Delete</button> `;
     inputHTML += html;
   });
 
   document.querySelector(".js-todo-list").innerHTML = inputHTML;
+
+  document
+    .querySelectorAll(".js-delete-todo-btn")
+    .forEach((deleteButton, index) => {
+      deleteButton.addEventListener("click", () => {
+        todoList.splice(index, 1);
+        generateHTML();
+        // Whenever we update the todo list, save in localStorage.
+        saveToStorage();
+      });
+    });
+
+  //   .addEventListener("click", ()=> {
+  //     todoList.splice(${index}, 1);
+  //        generateHTML();
+  //         saveToStorage();
+  //   });
 }
 
 function addTodo() {
