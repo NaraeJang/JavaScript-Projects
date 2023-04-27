@@ -10,12 +10,23 @@
     <button
       class="js-finish-btn"
       onclick="
+      document.querySelector('.js-finish-btn').innerHTML = 'Loading..';
     setTimeout(()=>{
         document.querySelector('.js-finish-btn').innerHTML = 'Finished!';
     }, 1000)
     ">
       working on?
     </button>
+    <br /><br />
+    <button
+      class="js-cart-btn"
+      onclick="
+     displayMessage();
+    ">
+      Add to cart
+    </button>
+    <div class="js-added"></div>
+
     <script>
       const add = function () {
         console.log(2 + 3);
@@ -33,6 +44,13 @@
       runTwice(function () {
         console.log("12b");
       });
+
+      function displayMessage() {
+        document.querySelector(".js-added").innerHTML = "Added";
+        setTimeout(() => {
+          document.querySelector(".js-added").innerHTML = "";
+        }, 2000);
+      }
     </script>
   </body>
 </html>
