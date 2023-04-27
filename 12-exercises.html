@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lesson12_Exercises</title>
+    <title>App</title>
   </head>
   <body>
     <button
@@ -58,6 +58,22 @@
           jsAdded.innerHTML = "";
         }, 2000);
       }
+
+      //   let i = 0;
+      //   setInterval(() => {
+      //     if (i < 20) {
+      //       document.title = `${i} New messages`;
+      //       i++;
+      //     }
+      //   }, 1000);
+
+      setInterval(function () {
+        if (document.title === "App") {
+          document.title = "(2) New messages";
+        } else {
+          document.title = "App";
+        }
+      }, 1000);
     </script>
   </body>
 </html>
