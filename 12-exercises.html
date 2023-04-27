@@ -7,7 +7,7 @@
     <title>App</title>
   </head>
   <body>
-    <button
+    <!-- <button
       class="js-finish-btn"
       onclick="
       document.querySelector('.js-finish-btn').innerHTML = 'Loading..';
@@ -25,39 +25,61 @@
     ">
       Add to cart
     </button>
-    <div class="js-added"></div>
+    <div class="js-added"></div> -->
+    <button
+      class="js-add-msg"
+      onclick="
+    messages++;
+    displayNotification();
+    ">
+      Add
+    </button>
+    <button
+      class="js-remove-msg"
+      onclick=" 
+      if (messages > 0) {
+        messages--;
+        
+        if (messages === 0) {
+            stopNotification();} 
+            
+        }
+
+    ">
+      Remove
+    </button>
 
     <script>
-      const add = function () {
-        console.log(2 + 3);
-      };
+      //   const add = function () {
+      //     console.log(2 + 3);
+      //   };
 
-      add();
-      add();
+      //   add();
+      //   add();
 
-      function runTwice(fun) {
-        fun();
-        fun();
-      }
+      //   function runTwice(fun) {
+      //     fun();
+      //     fun();
+      //   }
 
-      runTwice(add);
-      runTwice(function () {
-        console.log("12b");
-      });
+      //   runTwice(add);
+      //   runTwice(function () {
+      //     console.log("12b");
+      //   });
 
-      let timeoutId;
+      //   let timeoutId;
 
-      function displayMessage() {
-        const jsAdded = document.querySelector(".js-added");
+      //   function displayMessage() {
+      //     const jsAdded = document.querySelector(".js-added");
 
-        jsAdded.innerHTML = "Added";
+      //     jsAdded.innerHTML = "Added";
 
-        clearTimeout(timeoutId);
+      //     clearTimeout(timeoutId);
 
-        timeoutId = setTimeout(() => {
-          jsAdded.innerHTML = "";
-        }, 2000);
-      }
+      //     timeoutId = setTimeout(() => {
+      //       jsAdded.innerHTML = "";
+      //     }, 2000);
+      //   }
 
       //   let i = 0;
       //   setInterval(() => {
@@ -67,13 +89,33 @@
       //     }
       //   }, 1000);
 
-      setInterval(function () {
-        if (document.title === "App") {
-          document.title = "(2) New messages";
-        } else {
-          document.title = "App";
+      let messages = 2;
+      let intervalID;
+      let isDisplayNotification;
+
+      displayNotification();
+
+      function displayNotification() {
+        if (isDisplayNotification) {
+          return;
         }
-      }, 1000);
+
+        isDisplayNotification = true;
+
+        intervalID = setInterval(function () {
+          if (document.title === "App") {
+            document.title = `${messages} New messages`;
+          } else {
+            document.title = "App";
+          }
+        }, 1000);
+      }
+
+      function stopNotification() {
+        isDisplayNotification = false;
+        clearInterval(intervalID);
+        document.title = "App";
+      }
     </script>
   </body>
 </html>
