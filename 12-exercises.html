@@ -45,10 +45,17 @@
         console.log("12b");
       });
 
+      let timeoutId;
+
       function displayMessage() {
-        document.querySelector(".js-added").innerHTML = "Added";
-        setTimeout(() => {
-          document.querySelector(".js-added").innerHTML = "";
+        const jsAdded = document.querySelector(".js-added");
+
+        jsAdded.innerHTML = "Added";
+
+        clearTimeout(timeoutId);
+
+        timeoutId = setTimeout(() => {
+          jsAdded.innerHTML = "";
         }, 2000);
       }
     </script>
