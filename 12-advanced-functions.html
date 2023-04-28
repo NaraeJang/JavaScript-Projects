@@ -9,82 +9,86 @@
   <body>
     <button class="js-btn">Click</button>
     <script>
-      const buttonElement = document.querySelector(".js-btn");
-      const eventListener = () => {
-        console.log("clicked");
-      };
-      buttonElement.addEventListener("click", eventListener);
+      /*
+        const buttonElement = document.querySelector(".js-btn");
+        const eventListener = () => {
+          console.log("clicked");
+        };
+        buttonElement.addEventListener("click", eventListener);
 
-      buttonElement.removeEventListener("click", eventListener);
+        buttonElement.removeEventListener("click", eventListener);
 
-      buttonElement.addEventListener("click", () => {
-        console.log("click2");
-      });
+        buttonElement.addEventListener("click", () => {
+          console.log("click2");
+        });
+
+        */
+
       //It was 2 parameters
       //1. event or what type of interaction we want to listen for.
       //(The way to find these event names is to look at button's attribute. after "on" is the event name.)
       // 2. function that we want to run when we click the event listener.
       /*
-      function greeting() {
-        //This is the shortcut of the last function code.
-        console.log("hello");
-      }
+        function greeting() {
+          //This is the shortcut of the last function code.
+          console.log("hello");
+        }
 
-      greeting();
+        greeting();
 
-      // Functions are values
-      const function1 = function () {
-        //This is called Anonymous function which means a function without a name.
-        console.log("hello2");
-      };
+        // Functions are values
+        const function1 = function () {
+          //This is called Anonymous function which means a function without a name.
+          console.log("hello2");
+        };
 
-      console.log(function1);
-      console.log(typeof function1);
-      function1();
+        console.log(function1);
+        console.log(typeof function1);
+        function1();
 
-      const object1 = {
-        num: 2,
-        fun: function () {
-          //as long as there's a way to access this function, we dont need to name it. we can leave it as an anonymous function.
-          console.log("hello3");
-        },
-      };
+        const object1 = {
+          num: 2,
+          fun: function () {
+            //as long as there's a way to access this function, we dont need to name it. we can leave it as an anonymous function.
+            console.log("hello3");
+          },
+        };
 
-      object1.fun();
+        object1.fun();
 
-      //passing a vaule into a function
-      function display(param) {
-        console.log(param);
-      }
-      display(2);
+        //passing a vaule into a function
+        function display(param) {
+          console.log(param);
+        }
+        display(2);
 
-      // we can also pass a function into a function. = Callback function
-      function run(param) {
-        param();
-      }
+        // we can also pass a function into a function. = Callback function
+        function run(param) {
+          param();
+        }
 
-      run(function () {
-        console.log("hello4");
-      });
-      */
+        run(function () {
+          console.log("hello4");
+        });
+        */
 
       /*
-      setTimeout(function () {
-        console.log("timeout");
-      }, 3000); //we will wait for three seconds and then call this function.
+        setTimeout(function () {
+          console.log("timeout");
+        }, 3000); //we will wait for three seconds and then call this function.
 
-      console.log("next line");
-      //If we see our console, it displays next line first then after three seconds it displays timeout.
-      //why are they reversed?
-      //setTimeout sets up a timer and after three seconds it will call this function. however,
-      //it doesn't actually wait for the three seconds to finish, it just sets up the timer and immediately goes to the next line.
+        console.log("next line");
+        //If we see our console, it displays next line first then after three seconds it displays timeout.
+        //why are they reversed?
+        //setTimeout sets up a timer and after three seconds it will call this function. however,
+        //it doesn't actually wait for the three seconds to finish, it just sets up the timer and immediately goes to the next line.
 
-      // setInterval(function () {
-      //   console.log("interval");
-      // }, 3000);
+        // setInterval(function () {
+        //   console.log("interval");
+        // }, 3000);
 
-      console.log("next line2");
-      */
+        console.log("next line2");
+        */
 
       // // foreach Method
 
@@ -97,38 +101,50 @@
       // );
 
       /*
-      ["make dinner", "wash dishes", "watch youtube"].forEach(
-        (value, index) => {
-          if (value === "wash dishes") {
-            return; // This return statement will end this function early and it will go to the next function. Basically, it does the same thing as continue() in a for loop.
+        ["make dinner", "wash dishes", "watch youtube"].forEach(
+          (value, index) => {
+            if (value === "wash dishes") {
+              return; // This return statement will end this function early and it will go to the next function. Basically, it does the same thing as continue() in a for loop.
+            }
+            console.log(index);
+            console.log(value);
           }
-          console.log(index);
-          console.log(value);
-        }
-      );
+        );
 
-      const regularFuntion = function () {
-        console.log("hello");
-      };
-      // arrow function
-      const arrowFuntion = () => {
-        console.log("hello");
-      };
+        const regularFuntion = function () {
+          console.log("hello");
+        };
+        // arrow function
+        const arrowFuntion = () => {
+          console.log("hello");
+        };
 
-      arrowFuntion();
+        arrowFuntion();
 
-      const oneLine = () => 2 + 3;
+        const oneLine = () => 2 + 3;
 
-      console.log(oneLine());
+        console.log(oneLine());
 
-      const object2 = {
-        method: () => {
+        const object2 = {
+          method: () => {
 
-        },
-        method() {
+          },
+          method() {
 
-        } //This syntax is called ths shorthand method syntax.
-      }*/
+          } //This syntax is called ths shorthand method syntax.
+        }*/
+
+      // filter();
+      //Let's say we have [1, -3, 5] and we want to remove negative numbers. so result will be [1, 5]
+      console.log(
+        [1, -3, 5].filter((value, index) => {
+          return value >= 0;
+        })
+      ); //This time, the inner function will return a value.
+
+      // map();
+      //Letsay we have [1, 1, 3] and we want to make a copy with each nubmer doubled.
+      console.log([1, 1, 3].map((value) => value + 10));
     </script>
   </body>
 </html>
